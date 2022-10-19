@@ -17,7 +17,7 @@ export function Login() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        fetch(`http://localhost:3001/api/users/login`, {
+        fetch(`http://chat-web-app-server.herokuapp.com/api/users/login`, {
             method: "POST",
             body: JSON.stringify({username, password}),
             headers: {
