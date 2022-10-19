@@ -13,7 +13,7 @@ export function Profile() {
 
     // getting user info from the backend
     useEffect(()=>{
-        fetch(`http://localhost:3001/api/users/info`, {
+        fetch(`http://chat-web-app-server.herokuapp.com/api/users/info`, {
             method: "POST",
             body: JSON.stringify({username}),
             headers: {
