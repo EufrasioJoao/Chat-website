@@ -11,7 +11,7 @@ export function RoomsContainer() {
     
     // useEffect to get all rooms 
     useEffect(()=>{
-        fetch(`http://localhost:3001/api/rooms`)
+        fetch(`http://chat-web-app-server.herokuapp.com/api/rooms`)
             .then((res) => res.json())
             .then((data) => {
                 setRooms(data)
