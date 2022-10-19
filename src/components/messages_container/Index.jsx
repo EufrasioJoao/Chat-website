@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import Style from "./Style.module.css";
 
 import io from "socket.io-client";
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect("http://chat-web-app-server.herokuapp.com");
 
 export function MessagesContainer() {
 
@@ -19,7 +19,7 @@ export function MessagesContainer() {
     
     // useEffect to get messages from this current room
     useEffect(()=>{
-        fetch(`http://localhost:3001/api/messages`, {
+        fetch(`http://chat-web-app-server.herokuapp.com/api/messages`, {
             method: "POST",
             body: JSON.stringify({roomName: currentRoom}),
             headers: {
@@ -52,7 +52,7 @@ export function MessagesContainer() {
             
             socket.on('receive_message', (data)=>{
                 // when the event above its called, we fetch data to our api to get all messages
-                fetch(`http://localhost:3001/api/messages`, {
+                fetch(`http://chat-web-app-server.herokuapp.com/api/messages`, {
                     method: "POST",
                     body: JSON.stringify({roomName: currentRoom}),
                     headers: {"Content-Type": "application/json"},
