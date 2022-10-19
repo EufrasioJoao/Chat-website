@@ -29,7 +29,7 @@ export function Register() {
         };
 
 
-        fetch(`http://localhost:3001/api/users/register`, {
+        fetch(`http://chat-web-app-server.herokuapp.com/api/users/register`, {
             method: "POST",
             body: JSON.stringify(uploadDataObject),
             headers: {
