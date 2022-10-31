@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import Style from "./Style.module.css";
 
 import io from "socket.io-client";
-const socket = io.connect("https://chat-web-app-server.herokuapp.com");
+const socket = io("https://chat-web-app-server.herokuapp.com", {transports: ['websocket']});
 
 export function MessagesContainer() {
 
